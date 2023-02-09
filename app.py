@@ -1,7 +1,7 @@
 import openai
 import streamlit as st
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = st.secrets["api_key"]
 
 def generate_text(model, prompt):
     completions = openai.Completion.create(
