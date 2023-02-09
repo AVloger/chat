@@ -21,9 +21,10 @@ def main():
     model = "text-davinci-003"
     name = st.text_input("请输入您的名字")
     born = st.text_input("请输入你的出生年月日")
+    star = st.text_input("请输入你的星座")
     description = st.text_input("请描述您的具体需求")
     length = st.selectbox("选择生成内容的字数", [100, 200, 300, 400, 500])
-    prompt = f"生成{born}出生的 {name} 2023年运势：{description}"
+    prompt = f"生成{born}出生{star}的 {name} 2023年运势：{description}"
 
     if st.button("生成运势"):
         prediction = generate_text(model, prompt)
