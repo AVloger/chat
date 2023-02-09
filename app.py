@@ -1,7 +1,7 @@
 import openai
 import streamlit as st
 
-openai.api_key = "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"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def generate_text(model, prompt):
     completions = openai.Completion.create(
